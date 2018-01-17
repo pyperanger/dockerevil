@@ -1,4 +1,3 @@
-﻿﻿
 ## dockerevil
 
 A simple repository to store my security flaws in the docker technology
