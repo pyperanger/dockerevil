@@ -167,10 +167,11 @@ Now you have privileged access inside the remote server. :)
 ***
 ![](x.gif)
 ***
-Referencias:
-[http://www.agarri.fr/kom/archives/2014/09/11/trying_to_hack_redis_via_http_requests/index.html]()
-[https://docs.docker.com/engine/api/v1.24]()
-[https://www.securusglobal.com/community/2014/03/17/how-i-got-root-with-sudo/](https://www.securusglobal.com/community/2014/03/17/how-i-got-root-with-sudo/)
-[https://nmap.org/book/nse-tutorial.html]()
+References:
+
+http://www.agarri.fr/kom/archives/2014/09/11/trying_to_hack_redis_via_http_requests/index.html
+https://docs.docker.com/engine/api/v1.24
+https://www.securusglobal.com/community/2014/03/17/how-i-got-root-with-sudo/
+
 
 
