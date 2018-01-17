@@ -165,8 +165,6 @@ Docker version 1.12.6, build ae7d637/1.12.6
 Now you have privileged access inside the remote server. :)
 
 ***
-![](x.gif)
-***
 References:
 
 http://www.agarri.fr/kom/archives/2014/09/11/trying_to_hack_redis_via_http_requests/index.html
