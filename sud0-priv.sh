@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # SUDO Docker Privilege Escalation 
+# https://github.com/pyperanger/dockerevil
 
 # SELINUX "bypass" using :z option
 # https://docs.docker.com/engine/admin/volumes/bind-mounts/#configure-the-selinux-label
