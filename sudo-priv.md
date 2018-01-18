@@ -1,4 +1,4 @@
-## SUDO Docker Privilege Escalation 
+## Docker SUDO Privilege Escalation 
 
 ### PoC Video - [exploit](https://github.com/pyperanger/dockerevil/blob/master/sud0-priv.sh)
 
