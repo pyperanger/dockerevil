@@ -5,6 +5,7 @@ A simple repository to store my security flaws in the docker technology
 * **[Docker API Privilege Escalation](https://github.com/pyperanger/dockerevil/blob/master/docker-api.md)**
   * **[Escalate from Offline Server/Minimal Images/Build from TAR Dockerfile](https://github.com/pyperanger/dockerevil/blob/master/privbuildtar.md)**
 * **[Docker SUDO Privilege Escalation](https://github.com/pyperanger/dockerevil/blob/master/sudo-priv.md) ([PoC](https://github.com/pyperanger/dockerevil/blob/master/sud0-priv.sh))**
+* **OpenShift Privilege Escalation(Soon)**
 * **[Nmap Scripts](https://github.com/pyperanger/dockerevil/blob/master/http-docker-rapi.nse)**
 
 ***
