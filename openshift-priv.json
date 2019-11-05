@@ -1,0 +1,35 @@
+{
+        "apiVersion": "v1",
+        "id": "privid",
+        "kind": "Pod",
+        "metadata": {
+            "name": "privid"
+        },
+        "spec": {
+            "containers": [
+                 {
+                     "name": "privid",
+                     "image": "ubuntu",
+                     "volumeMounts": [
+                         {
+                             "mountPath": "/mnt",
+                             "name": "volumeshared"
+                         }
+                     ],
+       "securityContext": {
+                  "capabilities": {},
+                  "privileged": true, 
+    "runAsUser" : 0
+   }
+                 }
+            ],
+            "volumes": [
+                {
+                     "name": "volumeshared",
+                     "hostPath": {
+                        "path": "/"
+                     }
+                }
+            ]
+        }
+    }
